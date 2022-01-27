@@ -1,8 +1,8 @@
 <?PHP
 
+declare(strict_types=1);
 
-    define('BASEDIR',basename(__DIR__));
-    define('PLFILE',plugin_dir_path(__FILE__));
-    define('PLDIR',plugin_dir_path(__DIR__));
-
-    define('TXTDOM','apiusers');
+const BASEDIR = basename(__DIR__);
+const PLFILE = plugin_dir_path(__FILE__);
+const PLDIR =  plugin_dir_path(__DIR__);
+const TXTDOM = 'apiusers';
