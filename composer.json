@@ -5,5 +5,10 @@
     },
     "require-dev": {
         "inpsyde/php-coding-standards": "^1@dev"
+    },    
+
+    "autoload": {
+        "psr-4": {"App\\": "Classes/"},
+    "require": {}
     }
 }

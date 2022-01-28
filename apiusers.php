@@ -17,4 +17,38 @@ declare(strict_types=1);
 if (!defined('ABSPATH')) {
     die('-1');
 }
-require('config.php');
+
+error_reporting(-1);
+require 'vendor/autoload.php';
+require 'config.php';
+
+use App\API\includeTemplate;
+
+
+
+class Main{
+
+    function runIt(){
+ 
+        $front = new includeTemplate();
+        $front->start();
+    }
+}
+$start = new Main();
+$start->runIt();
+
+
+
+
+
+
+
+
+
+
+
+ /********************************************************************
+ *                                                                    *
+ *                       E N D    M A I N    C L A S S                *  
+ *                                                                    *  
+ * *******************************************************************/
