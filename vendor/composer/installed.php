@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '4bf935ae811f6d7db65e43ca5c4b36ab0fab7f89',
+        'reference' => 'b6a9a8bdf060e1b9452f0edf396b28e7b9b31815',
         'name' => '__root__',
         'dev' => true,
     ),
@@ -16,7 +16,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '4bf935ae811f6d7db65e43ca5c4b36ab0fab7f89',
+            'reference' => 'b6a9a8bdf060e1b9452f0edf396b28e7b9b31815',
             'dev_requirement' => false,
         ),
         'automattic/phpcs-neutron-standard' => array(
@@ -38,12 +38,12 @@
             'dev_requirement' => true,
         ),
         'dealerdirect/phpcodesniffer-composer-installer' => array(
-            'pretty_version' => 'v0.7.1',
-            'version' => '0.7.1.0',
+            'pretty_version' => 'v0.7.2',
+            'version' => '0.7.2.0',
             'type' => 'composer-plugin',
             'install_path' => __DIR__ . '/../dealerdirect/phpcodesniffer-composer-installer',
             'aliases' => array(),
-            'reference' => 'fe390591e0241955f22eb9ba327d137e501c771c',
+            'reference' => '1c968e542d8843d7cd71de3c5c9c3ff3ad71a1db',
             'dev_requirement' => true,
         ),
         'inpsyde/php-coding-standards' => array(
@@ -54,7 +54,7 @@
             'aliases' => array(
                 0 => '1.x-dev',
             ),
-            'reference' => '33df1cfd2519fb2d54cabe084a9c349f0a737357',
+            'reference' => '8f6929b35b627fefbd865829cd8422954f73c6bd',
             'dev_requirement' => true,
         ),
         'phpcompatibility/php-compatibility' => array(
