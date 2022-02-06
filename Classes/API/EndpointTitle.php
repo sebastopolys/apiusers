@@ -11,11 +11,9 @@ class EndpointTitle
         add_filter('document_title_parts', [$this, 'endPointCallback']);
     }
 
-    public function endPointCallback($titleParts)
+    public function endPointCallback(array $titleParts): array
     {
-       
-            global $wp;
-            $titleParts['title'] = 'Api Users Endpoint';    
+        $titleParts['title'] = 'Api Users Endpoint';
         return $titleParts;
     }
 }

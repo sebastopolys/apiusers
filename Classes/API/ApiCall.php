@@ -6,7 +6,7 @@ namespace App\API;
 
 class ApiCall
 {
-    public function callApi($id)
+    public function callApi(?int $id): string
     {
         $apiEndpoint = 'https://jsonplaceholder.typicode.com/users/' . $id;
         $headers = [

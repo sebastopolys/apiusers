@@ -11,8 +11,6 @@ class AJAXApiCall
         add_action('wp_enqueue_scripts', [$this, 'loadScripts']);
         add_action('wp_ajax_nopriv_dcms_ajax_readmore', [$this, 'sendContent']);
         add_action('wp_ajax_dcms_ajax_readmore', [$this, 'sendContent']);
-      
-        
     }
 
     public function loadScripts()
@@ -20,16 +18,24 @@ class AJAXApiCall
         wp_register_script('rest-ajax', dirname(plugin_dir_url(__DIR__))
         . '/scripts/script.js', ['jquery'], '1', true);
         wp_enqueue_script('rest-ajax');
-        wp_localize_script('rest-ajax', 'dcms_vars', ['ajaxurl' => admin_url('admin-ajax.php')]);
+        wp_localize_script('rest-ajax', 'dcms_vars', [
+            'ajaxurl' => admin_url('admin-ajax.php'),
+            'nonce' => wp_create_nonce('ajax-nonce'), ]);
     }
 
     public function sendContent()
     {
-        if (isset($_POST['id_post'])) {
-            $idPost = absint($_POST['id_post']);
+        if (!empty($_POST['nonce'])) {
+            $nonce = sanitize_text_field(wp_unslash($_POST['nonce']));
+        }
+        if (
+            !empty(wp_verify_nonce($nonce, 'ajax-nonce'))
+            && isset($_POST['id_post'])
+        ) {
+            $idPost = sanitize_text_field(wp_unslash($_POST['id_post']));
         }
         $res = new ApiCall();
-        $resp = json_decode($res->callApi($idPost));
+        $resp = json_decode($res->callApi(intval($idPost)));
         echo '<div><p><a href="#" id="close_popup">x</a></p></div><div><ul>
         <li>Id:' . esc_html($resp->id) . ' </li>
         <li>Name:' . esc_html($resp->name) . ' </li>
