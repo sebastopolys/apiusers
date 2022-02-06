@@ -1,4 +1,36 @@
 {
+    "name": "sebastopolys/apiusers",
+	"type": "wordpress-plugin",
+	"license": "GPL-2.0-only",
+	"description": "Inpsyde job task",
+	"homepage": "https://github.com/sebastopolys/apiusers",
+	"authors": [
+		{
+			"name": "Sebastian Rossi",
+			"email": "sebastopolys@gmail.com",
+			"homepage": "https://github.com/sebastopolys"
+		}
+	],
+	"keywords": [
+		"wordpress",
+		"openid"
+	],
+	"config": {
+		"platform": {
+			"php": "7.4"
+		},
+		"optimize-autoloader": true
+	},
+	"repositories": [
+		{
+			"type": "git",
+			"url": "https://github.com/sebastopolys/apiusers"
+		}
+	],
+	"require": {
+		"php": ">=7.1.0",
+		"composer/installers": "~1.0"
+	},
     "require-dev": {
         "squizlabs/php_codesniffer": "3.*",
         "inpsyde/php-coding-standards": "^0.13.4"
