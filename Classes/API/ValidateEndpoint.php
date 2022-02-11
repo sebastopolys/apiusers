@@ -21,11 +21,11 @@ class ValidateEndpoint
         if (!empty($_SERVER['HTTP_HOST']) && !empty($_SERVER['REQUEST_URI'])) {
             $httpHost = sanitize_text_field(wp_unslash($_SERVER['HTTP_HOST']));
             $httUri = sanitize_text_field(wp_unslash($_SERVER['REQUEST_URI']));
-        }
-        if (
-            $protocol . $httpHost . $httUri === get_site_url() . '/testapi'
-        ) {
-                return true;
+            if (
+                $protocol . $httpHost . $httUri === get_site_url() . '/apiusers'
+            ) {
+                    return true;
+            }
         }
             return false;
     }
