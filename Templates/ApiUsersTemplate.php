@@ -11,15 +11,21 @@ declare(strict_types=1);
 use App\API\ApiCall;
 
 $res = new ApiCall();
-get_header(); ?>
+$apiResp = json_decode($res->callApi(null));
+$options = get_option('apiusers_settings');
+if ($options['apiusers_radio_field_1'] === 'raw') {
+    echo "<style>
+   .site-header,.site-footer{display:none;}
+   </style>";
+};
 
-    <div id="primary" class="content-area">
-    <main id="main" class="site-main" role="main">
-    <?php
+get_header();
 
-    $apiResp = json_decode($res->callApi(null));
-    echo"<table><th>ID</th><th>Name</th><th>Username</th>";
-    for ($i = 0; $i < count($apiResp); $i++) {
+if ($options['apiusers_radio_field_1'] === 'raw') {
+    echo "<h1>Api Users table:</h1>";
+}
+echo"<table><th>ID</th><th>Name</th><th>Username</th>";
+for ($i = 0; $i < count($apiResp); $i++) {
         echo "<tr>";
         echo '<td><a href="#" id="id-'
         . esc_html($i) . '" class="tabledata" data="'
@@ -34,16 +40,20 @@ get_header(); ?>
         . esc_attr($apiResp[$i]->id) . '">'
         . esc_html($apiResp[$i]->username) . "</a></td>";
         echo "</tr>";
-    }
-    echo "</table>";
+}
+echo "</table>";
+if (isset($options['apiusers_checkbox_field_2'])) {
+        echo
+        '<p class="apiusers-credit">
+        Api Users plugin was created by Sebastopolys for Inpsyde job application
+        </p>';
+}
 
-    ?>
+?>
 <div id="resp-ajax" class="">
 
 </div>
 
-</main><!-- #main -->
-</div><!-- #primary -->
-
 <?php
+
 get_footer();

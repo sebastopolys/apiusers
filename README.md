@@ -20,5 +20,15 @@ Api Users Inpsyde task
 The custom Endpoint is named like the plugin name: ```apiusers```
 
 There is no link supplied on the frontend, just access by typing the endpoint after website URL. Or place a link anywere on the frontend
+
 ```https://yourwebsite.com/apiusers```
->>>>>>> 26a818eb295eae0f66dc54e48118df16564674fd
+
+### PHP Code Sniffer / Inpsyde Standards
+
+run from console  ```vendor/bin/phpcs --standard="Inpsyde" <file path>```
+
+## Unit testing
+
+phpunit framework is available to run from console. 
+```vendor/bin/phpunit <test file>```
+
