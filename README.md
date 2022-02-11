@@ -10,6 +10,7 @@
 4. Enter apiusers plugin folder  ```https://yourwebsite.com/wp-content/plugins/apiusers```
 5. Run ```composer install```
 6. Run ```composer update``` if necessary
+7. Activate plugin from WP admin dashboard
 
 
 ### Endpoint:
