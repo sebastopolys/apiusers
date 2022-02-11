@@ -1,7 +1,4 @@
 # apiusers
-<<<<<<< HEAD
-Api Users Inpsyde task
-=======
 
 ## A WordPress plugin made for Inpsyde job aplication
 
