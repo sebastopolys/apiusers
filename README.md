@@ -18,3 +18,13 @@ The custom Endpoint is named like the plugin name: ```apiusers```
 
 There is no link supplied on the frontend, just access by typing the endpoint after website URL. Or place a link anywere on the frontend
 ```https://yourwebsite.com/apiusers```
+
+### PHP Code Sniffer / Inpsyde Standards
+
+run from console  ```vendor/bin/phpcs --standard="Inpsyde" <file path>```
+
+
+## Unit testing
+
+phpunit framework is available to run from console. 
+```vendor/bin/phpunit <test file>```
