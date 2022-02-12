@@ -146,20 +146,19 @@ class BackendDashboard
     }
 
     public function callbackValidation($input){
-        $output = array();
-     
-         
+        $output = array();              
         // Check to see if the current option has a value. If so, process it.
         if( isset( $input['apiusers_text_field_0'])) {
-         
+
             // Strip all HTML and PHP tags and properly handle quoted strings
-            $output['apiusers_text_field_0'] = preg_replace('/[^A-Za-z0-9]/ ', '', $input['apiusers_text_field_0'] );
+            $output['apiusers_text_field_0'] = preg_replace('/\s+/', '_', $input['apiusers_text_field_0']);
+            $output['apiusers_text_field_0'] = preg_replace('/[^_A-Za-z0-9]/ ', '', $output['apiusers_text_field_0']);            
             if ($output['apiusers_text_field_0']=='') {
                 $output['apiusers_text_field_0']=get_option('apiusers_settings')['apiusers_text_field_0'];
             }
-            $output['apiusers_radio_field_1']=$input['apiusers_radio_field_1']; 
-            $output['apiusers_checkbox_field_2']=$input['apiusers_checkbox_field_2']; 
+            $output['apiusers_radio_field_1']=$input['apiusers_radio_field_1'];
+            $output['apiusers_checkbox_field_2']=$input['apiusers_checkbox_field_2'];
             return apply_filters( 'callbackValidation', $output, $input );
-        }  
+        }
     }
 }
