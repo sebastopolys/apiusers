@@ -12,14 +12,15 @@ use App\API\ApiCall;
 
 $res = new ApiCall();
 $apiResp = json_decode($res->callApi(null));
-get_header();
+
 $options = get_option('apiusers_settings');
 if ($options['apiusers_radio_field_1'] === 'raw') {
     echo "<style>
    .site-header,.site-footer{display:none;}
    </style>";
-    echo "<h1>Api Users table:</h1>";
+    echo '<h1 class="raw-title">Api Users table:</h1>';
 }
+get_header();
 echo"<table><th>ID</th><th>Name</th><th>Username</th>";
 for ($i = 0; $i < count($apiResp); $i++) {
         echo "<tr>";

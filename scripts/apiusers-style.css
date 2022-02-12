@@ -24,3 +24,10 @@
     width:50%;
     margin:auto;
 }
+
+h1.raw-title{
+    margin: auto; 
+    width: 55%;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}

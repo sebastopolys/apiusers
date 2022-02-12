@@ -20,9 +20,9 @@ class ValidateEndpoint
         }
         if (!empty($_SERVER['HTTP_HOST']) && !empty($_SERVER['REQUEST_URI'])) {
             $httpHost = sanitize_text_field(wp_unslash($_SERVER['HTTP_HOST']));
-            $httUri = sanitize_text_field(wp_unslash($_SERVER['REQUEST_URI']));
+            $httpUri = sanitize_text_field(wp_unslash($_SERVER['REQUEST_URI']));
             if (
-                $protocol . $httpHost . $httUri === get_site_url()
+                $protocol . $httpHost . $httpUri === get_site_url()
                 . '/' . $options['apiusers_text_field_0']
             ) {
                     return true;
