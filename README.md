@@ -14,7 +14,7 @@
 
 
 ### Endpoint:
-The custom Endpoint is named like the plugin name: ```apiusers```
+The default Endpoint is named like the plugin name: ```apiusers```
 
 There is no link supplied on the frontend, just access by typing the endpoint after website URL. Or place a link anywere on the frontend
 
@@ -28,4 +28,16 @@ run from console  ```vendor/bin/phpcs --standard="Inpsyde" <file path>```
 
 phpunit framework is available to run from console. 
 ```vendor/bin/phpunit <test file>```
+> Plugin author did not have any previous experience with Unit Testing, so decided to use phpunit framework beacuase of its complete documentation and integration by default with WP
+
+### Backend admin menu
+
+Some backend options are provided in the WP admin dashboard under tha Api Users tab
+It implements WordPress Settings API 
+
+- Customize endpoint: Allows to edit the default endpoint 
+- View: table integrated with theme or excluding WP header & footer
+- Credit: Display / Hide credits
+
+
 
