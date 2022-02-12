@@ -133,7 +133,7 @@ class BackendDashboard
         $options = get_option('apiusers_settings');
         ?>
         <input type='checkbox' name='apiusers_settings[apiusers_checkbox_field_2]' <?php
-        if (!empty($options['apiusers_checkbox_field_2'])) {
+        if (!isset($options['apiusers_checkbox_field_2'])) {
             ?>checked  <?php
         } ?>value = "1" 
         >
