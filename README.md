@@ -33,6 +33,7 @@ phpunit framework is available to run from console.
 ### Backend admin menu
 
 Some backend options are provided in the WP admin dashboard under tha Api Users tab
+
 It implements WordPress Settings API 
 
 - Customize endpoint: Allows to edit the default endpoint 
