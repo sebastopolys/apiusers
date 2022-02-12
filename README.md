@@ -28,7 +28,7 @@ run from console  ```vendor/bin/phpcs --standard="Inpsyde" <file path>```
 
 [phpunit](https://phpunit.de/) framework is available to run from console. 
 ```vendor/bin/phpunit <test file>```
-> Plugin author did not have any previous experience with Unit Testing, so decided to use phpunit framework beacuase of its complete documentation and integration by default with WP
+> Plugin author did not have any previous experience with Unit Testing, so decided to use phpunit framework because of its complete documentation and integration by default with WP
 
 ### Backend admin menu
 
