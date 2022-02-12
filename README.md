@@ -26,7 +26,7 @@ run from console  ```vendor/bin/phpcs --standard="Inpsyde" <file path>```
 
 ## Unit testing
 
-phpunit framework is available to run from console. 
+[phpunit](https://phpunit.de/) framework is available to run from console. 
 ```vendor/bin/phpunit <test file>```
 > Plugin author did not have any previous experience with Unit Testing, so decided to use phpunit framework beacuase of its complete documentation and integration by default with WP
 
@@ -37,7 +37,7 @@ Some backend options are provided in the WP admin dashboard under tha Api Users 
 It implements WordPress Settings API 
 
 - Customize endpoint: Allows to edit the default endpoint 
-- View: table integrated with theme or excluding WP header & footer
+- View: Display table integrated with theme or excluding WP header & footer
 - Credit: Display / Hide credits
 
 
