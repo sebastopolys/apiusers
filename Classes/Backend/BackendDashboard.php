@@ -45,7 +45,7 @@ class BackendDashboard
         if (empty($options)) {
             $options['apiusers_text_field_0'] = 'default';
             $options['apiusers_radio_field_1'] = 'theme';
-            $options['apiusers_checkbox_field_2'] = '0';
+            $options['apiusers_checkbox_field_2'] = '1';
             update_option('apiusers_settings', $options);
         }
 
@@ -130,7 +130,9 @@ class BackendDashboard
 
     public function apiusersCheckboxRender()
     {
-        $options = get_option('apiusers_settings');
+        if(get_option('apiusers_settings')){
+            $options = get_option('apiusers_settings');
+        }
         ?>
         <input type='checkbox' name='apiusers_settings[apiusers_checkbox_field_2]' <?php
         if (isset($options['apiusers_checkbox_field_2'])) {
