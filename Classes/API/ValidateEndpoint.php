@@ -8,6 +8,7 @@ class ValidateEndpoint
 {
     public static function validateTheEndpoint(): bool
     {
+        
         $options = get_option('apiusers_settings');
         if (
             isset($_SERVER['HTTPS']) === 'on' || isset($_SERVER['HTTPS']) === 1
