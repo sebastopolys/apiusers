@@ -37,7 +37,7 @@ Some backend options are provided in the WP admin dashboard under tha Api Users 
 It implements WordPress Settings API.
 
 - Customize endpoint: Allows to edit the default endpoint 
-- View: Display table integrated with theme or excluding WP header & footer
+- View: Display table integrated with theme or excluding theme header & footer
 - Credit: Display / Hide credits
 
 
