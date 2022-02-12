@@ -94,7 +94,7 @@ class BackendDashboard
 
     public function apiusersSettingsSectionCallback()
     {
-        echo __('Some backend options', 'apiusers');
+        echo __('Some more backend options', 'apiusers');
     }
 
     public function apiusersTextFieldRender()
@@ -130,7 +130,7 @@ class BackendDashboard
 
     public function apiusersCheckboxRender()
     {
-        if(get_option('apiusers_settings')){
+        if(get_option('apiusers_settings' !== null)){
             $options = get_option('apiusers_settings');
         }
         ?>

@@ -9,7 +9,11 @@ class ValidateEndpoint
     public static function validateTheEndpoint(): bool
     {
         
-        $options = get_option('apiusers_settings');
+        if(null !== get_option('apiusers_settings')){
+            $options = get_option('apiusers_settings');
+        } else {
+            $options['apiusers_text_field_0'] = 'apiusers'; 
+        }
         if (
             isset($_SERVER['HTTPS']) === 'on' || isset($_SERVER['HTTPS']) === 1
             || isset($_SERVER['HTTP_X_FORWARDED_PROTO']) === 'https'
