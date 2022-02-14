@@ -49,7 +49,7 @@ class BackendDashboard
             update_option('apiusers_settings', $options);
         }
 
-        register_setting('pluginPage', 'apiusers_settings', [$this,'callbackValidation']);
+        register_setting('pluginPage', 'apiusers_settings', [$this, 'callbackValidation']);
 
         add_settings_section(
             'apiusers_pluginPage_section',
@@ -130,10 +130,10 @@ class BackendDashboard
 
     public function apiusersCheckboxRender()
     {
-        if(!empty(get_option('apiusers_settings'))){
+        if (!empty(get_option('apiusers_settings'))){
             $options = get_option('apiusers_settings');
         }
-        else {
+        if (empty(get_option('apiusers_settings'))){
             $options['apiusers_checkbox_field_2'] = '';
         }
         ?>
@@ -145,20 +145,23 @@ class BackendDashboard
         <?php
     }
 
-    public function callbackValidation($input){
-        $output = array();              
+    public function callbackvalidation($input): array
+    {
+        $output = [];              
         // Check to see if the current option has a value. If so, process it.
-        if( isset( $input['apiusers_text_field_0'])) {
-
+        if (isset($input['apiusers_text_field_0'])) {
             // Strip all HTML and PHP tags and properly handle quoted strings
-            $output['apiusers_text_field_0'] = preg_replace('/\s+/', '_', $input['apiusers_text_field_0']);
-            $output['apiusers_text_field_0'] = preg_replace('/[^_A-Za-z0-9]/ ', '', $output['apiusers_text_field_0']);            
-            if ($output['apiusers_text_field_0']=='') {
-                $output['apiusers_text_field_0']=get_option('apiusers_settings')['apiusers_text_field_0'];
+            $output['apiusers_text_field_0'] =
+            preg_replace('/\s+/', '_', $input['apiusers_text_field_0']);
+            $output['apiusers_text_field_0'] =
+            preg_replace('/[^_A-Za-z0-9]/ ', '', $output['apiusers_text_field_0']);
+            if ($output['apiusers_text_field_0'] === '') {
+                $output['apiusers_text_field_0'] =
+                get_option('apiusers_settings')['apiusers_text_field_0'];
             }
-            $output['apiusers_radio_field_1']=$input['apiusers_radio_field_1'];
-            $output['apiusers_checkbox_field_2']=$input['apiusers_checkbox_field_2'];
-            return apply_filters( 'callbackValidation', $output, $input );
+            $output['apiusers_radio_field_1'] = $input['apiusers_radio_field_1'];
+            $output['apiusers_checkbox_field_2'] = $input['apiusers_checkbox_field_2'];
+            return apply_filters('callbackvalidation', $output, $input);
         }
     }
 }
