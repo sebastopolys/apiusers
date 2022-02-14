@@ -13,7 +13,7 @@
 
 
 ### Endpoint:
-The custom Endpoint is named like the plugin name: ```apiusers```
+The default Endpoint is named like the plugin name: ```apiusers```
 
 There is no link supplied on the frontend, just access by typing the endpoint after website URL. Or place a link anywere on the frontend
 ```https://yourwebsite.com/apiusers```
@@ -33,6 +33,6 @@ Some bakcend options are included on the WP admin dashboard.
 
 The WP settings API was used.
 
-- Customize Endpoint: Allows to edit the endpoint.
+- Customize Endpoint: Allows to edit the default endpoint.
 - View: Displays integrated with theme or removing header & footer
 - Credits: Hide / Display credits below table
