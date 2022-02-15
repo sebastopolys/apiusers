@@ -16,7 +16,7 @@ $apiResp = json_decode($res->callApi(null));
 $options = get_option('apiusers_settings');
 if ($options['apiusers_radio_field_1'] === 'raw') {
     echo "<style>
-   .site-header,.site-footer{display:none;}
+   header,footer,.site-header,.site-footer{display:none;}
    </style>";
     echo '<h1 class="raw-title">Api Users table:</h1>';
 }
@@ -42,7 +42,7 @@ echo "</table>";
 if (isset($options['apiusers_checkbox_field_2'])) {
         echo
         '<p class="apiusers-credit">
-        Api Users plugin was created by Sebastopolys for Inpsyde job application
+        Api Users plugin was created by Sebastian Rossi for Inpsyde job application
         </p>';
 }
 

@@ -36,7 +36,7 @@ class BackendDashboard
 
     public function apiusersMainCallback()
     {
-        echo "Main";
+        echo wp_kses_post(file_get_contents(dirname(plugin_dir_path(__DIR__)) . '/Templates/welcomepage.html'));
     }
 
     public function apiusersSettingsInit()
@@ -94,7 +94,8 @@ class BackendDashboard
 
     public function apiusersSettingsSectionCallback()
     {
-        echo __('Some backend options again', 'apiusers');
+        echo wp_kses_post('<p class="warn-message"><i>
+        *Some options might not work properly with untested themes</i></p>');
     }
 
     public function apiusersTextFieldRender()
@@ -102,7 +103,7 @@ class BackendDashboard
         $options = get_option('apiusers_settings');
         ?>
         <input type='text' name='apiusers_settings[apiusers_text_field_0]' 
-        value='<?php echo $options['apiusers_text_field_0']; ?>'>
+        value='<?php echo esc_attr($options['apiusers_text_field_0']); ?>'>
         <?php
     }
 
@@ -110,19 +111,19 @@ class BackendDashboard
     {
         $options = get_option('apiusers_settings');
         ?>
-        <input id='radiotheme' type='radio' name='apiusers_settings[apiusers_radio_field_1]' 
+        <input id='radiotheme' type='radio' name='apiusers_settings[apiusers_radio_field_1]'
         <?php
         if ( $options['apiusers_radio_field_1'] === 'theme') {
-            ?> checked <?php
+            ?> checked<?php
         }
-        ?> 
+        ?>
         value='theme'>
         <label for="radiotheme">Theme</label>
-        <input id='radioraw' type='radio' name='apiusers_settings[apiusers_radio_field_1]' 
+        <input id='radioraw' type='radio' name='apiusers_settings[apiusers_radio_field_1]'
         <?php if ( $options['apiusers_radio_field_1'] === 'raw') {
             ?> checked<?php
         }
-        ?> 
+        ?>
         value='raw'>
         <label for='radioraw'>Raw</label>
         <?php
@@ -130,10 +131,10 @@ class BackendDashboard
 
     public function apiusersCheckboxRender()
     {
-        if (!empty(get_option('apiusers_settings'))){
+        if (!empty(get_option('apiusers_settings'))) {
             $options = get_option('apiusers_settings');
         }
-        if (empty(get_option('apiusers_settings'))){
+        if (empty(get_option('apiusers_settings'))) {
             $options['apiusers_checkbox_field_2'] = '';
         }
         ?>
@@ -145,12 +146,10 @@ class BackendDashboard
         <?php
     }
 
-    public function callbackvalidation($input): array
+    public function callbackvalidation(array $input): array
     {
-        $output = [];              
-        // Check to see if the current option has a value. If so, process it.
+        $output = [];
         if (isset($input['apiusers_text_field_0'])) {
-            // Strip all HTML and PHP tags and properly handle quoted strings
             $output['apiusers_text_field_0'] =
             preg_replace('/\s+/', '_', $input['apiusers_text_field_0']);
             $output['apiusers_text_field_0'] =
