@@ -20,23 +20,26 @@
             path of WP: <code>https://yourwebsite.com/wp-content/plugins</code></li>
             <li class="">Run <code>git clone https://github.com/sebastopolys/apiusers/</code></li>
             <li class="">cd to the apiusers
-            <code>folder https://yourwebsite.com/wp-content/plugins/apiusers</code></li>
+            folder <code>https://yourwebsite.com/wp-content/plugins/apiusers</code></li>
             <li class="">Run <code>composer install</code></li>
             <li class="">Run <code>composer update</code> if necesary</li>
             </ol>
-            <h4 class="">UNIT TESTING</h4>
-            <p class="">Please take in consideration that I have no previous experience with UNIT TESTING</p>
-            <p>phpunit installing testing environment:</i></p>
-            <ol>
-                <li>Install required files running <code>wp scaffold plugin-tests apiusers</code> on the console, from the WP root directory </li>
+            <h4 class="">UNIT TESTING</h4>            
+            <p><i>Phpunit installing testing environment:</i></p>
+            <ol>               
+                
+                <li>Create new database for testing purposes</li>       
                 <li>Create testing environment running the <code>bash bin/install-wp-tests.sh &lt;database name&gt; &lt;database user&gt; &lt;database password&gt;  &lt;localhost&gt; latest</code></li>
-                <li>install WP full core within the wordpress folder on temp/tmp directory</li>
+                <li>Install WP full core / apiuses plugin within the wordpress folder on temp/tmp directory if necessary</li>
             </ol>     
-            <p>phpunit usage</p>
+            <p><i>Phpunit usage</i></p>
             <ul>
-                <li>Run tests using the following command: <code>vendor/bin/phpunit &lt;test file name&gt;</code></li>
+                <li>cd to apiusers plugin path and use:<code>vendor/bin/phpunit tests/ApiusersTest.php</code> to run test file</li>
             </ul>     
-            <p class="">However, I am ready to develop this new skill if really necesary</p>        
+            <hr>
+            <blockquote><i>Please take in consideration that I have no previous experience with UNIT TESTING.
+                The test file is only for demonstrating how can I adapt developing with an unknown framework. 
+                 As always, I am ready to learn any new skill if really necessary</i></blockquote>        
             <h4 class="">BACKEND OPTIONS</h4>
             <p class="">Some backend options are provided 
             on the WP admin dashboard / Api Users / Settings</p>
@@ -48,8 +51,14 @@
             <li class=""><b>Credits:</b> Nothing special, just the 
             option to hide / display a brief footer message</li>
             <h4>PHP CODE SNIFFER / Inpsyde code style</h4>
+            <p><i>Usage:</i></p>
+            <ul>
+                <li>
+                    <p>Use <code>vendor/bin/phpcs --standard="Inpsyde" &lt;path-file&gt;</code> to run on single files</p>
+                </li>
+            </ul>
             <p>All files are free of errors and warnings, except for one:</p>
-            <p>It looks like some bug is present on the <code>Classes/Backend/BackendDashboard.php</code> file. Unexistent errors on lines 115 an 122</p>
+            <p>It looks like some bug is present on the <code>Classes/Backend/BackendDashboard.php</code> file. Unexistent errors on lines 116 an 123</p>
             </ul>
             <hr>
             <h4 class="">INFORMATION:</h4>
