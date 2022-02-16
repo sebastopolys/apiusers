@@ -2,22 +2,16 @@
 
 use App\API\ValidateEndpoint;
 use App\API\ApiCall;
-use App\API\AJAXApiCall;
 use App\Backend\BackendDashboard;
 
 class ApiusersTest extends WP_UnitTestCase
 {
-
-   
-
     function test_validate_class(){
     /* 
     *  TEsts the default endpoint url is true
     */
         $this->go_to( '/apiusers' );    
         $this->assertTrue(ValidateEndpoint::validateTheEndpoint());
-
-
     }
 
     /*
@@ -40,18 +34,17 @@ class ApiusersTest extends WP_UnitTestCase
         $this->assertIsString($result);
     }
     
-   /* function test_backenddashboard_class(){
-       // $backend = new BackendDashboard();
-       // $result = $backend->callbackvalidation();
-       // $this->assertIsArray($result);
-
-    }*/
-
+    /*
+    * Tests de backend option endpoint validation
+    */
     function test_backendoptions(){
         $backend = new BackendDashboard();
-        $backend->apiusersSettingsInit();
-        $this->assertTrue($options);
+        $input=[
+            'apiusers_text_field_0'=>'string',
+            'apiusers_radio_field_1'=>'',
+            'apiusers_checkbox_field_2'=>''
+        ];
+        $result =  $backend->callbackvalidation($input);
+        $this->assertIsArray($result);
     }
-
-
 }

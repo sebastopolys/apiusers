@@ -25,7 +25,14 @@ Use ```vendor/bin/phpcs --standard="Inpsyde"  <path-file>``` to run on single fi
 
 ### Testing
 
-[phpunit](https://phpunit.de/) is ready to use, 
+[phpunit](https://phpunit.de/) is ready to use, and a single test file (```/tests/ApiusersTest.php```) will execute all tests:
+
+**Usage:**
+1- Create new database for testing purposes
+2- Install testng environment from console: ```bash bin/install-wp-tests.sh <db-name> <db-user> <db-pass> <db-host> latest```
+3- Run test file using: ```vendor/bin/phpunit tests/ApiusersTest.php```
+
+> Please take in consideration that this testing fiel is only for demostration purposes and it does not cover all methods, only 4 tests are provided form different classes:``` ValidateEndpoint::validateTheEndpoint()``` , ```ApiCall::CallApi(null)``` , ```ApiCall::CallApi(int)``` and ```BackendDashboard::callbackvalidation()```
 
 ### Backend
 
