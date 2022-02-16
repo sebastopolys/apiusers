@@ -29,7 +29,7 @@ Use ```vendor/bin/phpcs --standard="Inpsyde"  <path-file>``` to run on single fi
 
 **Usage:**
 1. Create new database for testing purposes
-2. Install testng environment from console, on the plugin folder ```bash bin/install-wp-tests.sh <db-name> <db-user> <db-pass> <db-host> latest```
+2. Install testing environment from console, on the plugin folder ```bash bin/install-wp-tests.sh <db-name> <db-user> <db-pass> <db-host> latest```
 3. Run test file using: ```vendor/bin/phpunit tests/ApiusersTest.php```
 
 > Please take in consideration that plugin author does **not have any previous experience with UNIT TESTS**. This testing file is only for demostration purposes and it does not cover all methods, only 4 tests are provided form different classes:``` ValidateEndpoint::validateTheEndpoint()``` , ```ApiCall::CallApi(null)``` , ```ApiCall::CallApi(int)``` and ```BackendDashboard::callbackvalidation()```
@@ -43,3 +43,12 @@ The WP settings API was used.
 - Customize Endpoint: Allows to edit the default endpoint.
 - View: Displays integrated with theme or removing header & footer
 - Credits: Hide / Display credits below table
+
+### INFORMATION
+
+    - Plugin Author: Sebastian Rossi
+    - Plugin name: Api Users
+    - Plugin textdomain: apiusers
+    - Worked hours to complete: 48
+    - Contact: sebastopolys@gmail.com
+
