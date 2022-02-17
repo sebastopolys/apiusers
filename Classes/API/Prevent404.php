@@ -13,9 +13,8 @@ class Prevent404
 
     public function my404Override(string $template): string
     {
-        global $wp_query;
-        $vall = new ValidateEndpoint();
-        if ($vall->validateTheEndpoint() === true) {
+        global $wp_query;       
+        if (ValidateEndpoint::validateTheEndpoint() === true) {
             status_header(200);
             $wp_query->is_404 = false;
         }
