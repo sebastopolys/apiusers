@@ -22,8 +22,10 @@ require 'vendor/autoload.php';
 use App\API\ApiUsersInit;
 use App\Backend\BackendDashboard;
 
-$startBack = new BackendDashboard();
-$startBack->backHooks();
+if (is_admin()) {
+    $startBack = new BackendDashboard();
+    $startBack->backHooks();
+}
 
 $start = new ApiUsersInit();
 $start->runIt();
