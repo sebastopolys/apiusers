@@ -8,7 +8,7 @@ After installation, the plugin will display a table with users information on a 
 
 Users are retrieved from an external API for testing purposes: ```https://jsonplaceholder.typicode.com/users```
 
-The default endpoint can be customized on the provided backend options, found on the main WP admin dashboard
+The default endpoint can be edited on the provided backend options, found on the main WP admin dashboard. Regex validation is applied to the string before saved on database.
 
 After accessing the endpoint, more details about each user will be displayed when any of the values of table is clicked
 
