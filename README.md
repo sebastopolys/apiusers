@@ -6,7 +6,7 @@
 
 After installation, the plugin will display a table with users information on a custom endpoint
 
-Users are retrieved from an external API for testing purposes: ```https://jsonplaceholder.typicode.com/```
+Users are retrieved from an external API for testing purposes: ```https://jsonplaceholder.typicode.com/users```
 
 The default endpoint can be customized on the provided backend options, found on the main WP admin dashboard
 
