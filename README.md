@@ -2,6 +2,21 @@
 
 ## A WordPress plugin made for Inpsyde job aplication
 
+### Requirements & overall description of plugin
+
+After installation, the plugin will display a table with users information on a custom endpoint
+
+Users are retrieved from an external API for testing purposes: ```https://jsonplaceholder.typicode.com/```
+
+The default endpoint can be customized on the provided backend options, found on the main WP admin dashboard
+
+After accessing the endpoint, more details about each user will be displayed when any of the values of table are clicked
+
+The table is displayed on a custom template, it is not a post or a page recognized by WP.
+
+Because of this, a class named ```prevent404.php``` will prevent WP managinf the endpoint as a 404 page / error
+
+
 ### Install using ```composer```
 
 1. Open console
