@@ -12,6 +12,8 @@ The default endpoint can be customized on the provided backend options, found on
 
 After accessing the endpoint, more details about each user will be displayed when any of the values of table is clicked
 
+The users detail popup works on AJAX request and a new API call is made on each click, using the same class that is used for the users table: ```ApiCall.php```
+
 The table is displayed on a custom template, it is not a post or a page recognized by WP.
 
 Because of this, a class named ```Prevent404.php``` will prevent WP treating the endpoint as a 404 page / error
