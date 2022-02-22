@@ -4,8 +4,19 @@ declare(strict_types=1);
 
 namespace App\Backend;
 
+/**
+* Class BackendDashboard
+*
+* @package App\Backend
+*
+* called from: ApiUsers.php
+**/
+
 class BackendDashboard
 {
+    /*
+    * Initialize with hooks
+    */
     public function backHooks()
     {
 
@@ -13,6 +24,9 @@ class BackendDashboard
         add_action('admin_init', [$this, 'apiusersSettingsInit']);
     }
 
+    /*
+    * Adds WP dashboard menu & submenu tab
+    */
     public function apiusersAdminMenu()
     {
 
@@ -34,11 +48,17 @@ class BackendDashboard
         );
     }
 
+    /*
+    * Prints the Welcome page
+    */
     public function apiusersMainCallback()
     {
         echo wp_kses_post(file_get_contents(dirname(plugin_dir_path(__DIR__)) . '/Templates/welcomepage.html'));
     }
 
+    /*
+    * Add WP API settings on Settings page
+    */
     public function apiusersSettingsInit()
     {
         $options = get_option('apiusers_settings');
@@ -82,6 +102,9 @@ class BackendDashboard
         );
     }
 
+    /*
+    * Prints the WP API settings form
+    */
     public function apiusersOptionsPage()
     {
         ?>
@@ -92,12 +115,18 @@ class BackendDashboard
         ?></form><?php
     }
 
+    /*
+    * Adds sub title to settings Section
+    */
     public function apiusersSettingsSectionCallback()
     {
         echo wp_kses_post('<p class="warn-message"><i>
         *Some options might not work properly with untested themes</i></p>');
     }
 
+    /*
+    * Custom endpoint field
+    */
     public function apiusersTextFieldRender()
     {
         $options = get_option('apiusers_settings');
@@ -107,6 +136,9 @@ class BackendDashboard
         <?php
     }
 
+    /*
+    * View field
+    */
     public function apiUsersRadioRender()
     {
         $options = get_option('apiusers_settings');
@@ -129,6 +161,9 @@ class BackendDashboard
         <?php
     }
 
+    /*
+    * Credits field
+    */
     public function apiusersCheckboxRender()
     {
         if (!empty(get_option('apiusers_settings'))) {
@@ -146,6 +181,9 @@ class BackendDashboard
         <?php
     }
 
+    /*
+    * Custom Endpoint string REGEX validation
+    */
     public function callbackvalidation(array $input): array
     {
         $output = [];

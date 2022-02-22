@@ -53,7 +53,7 @@ Use ```vendor/bin/phpcs --standard="Inpsyde"  <path-file>``` to run on single fi
 
 ### Backend
 
-Some bakcend options are included on the WP admin dashboard.
+Some backend options are included on the WP admin dashboard.
 
 The WP settings API was used.
 

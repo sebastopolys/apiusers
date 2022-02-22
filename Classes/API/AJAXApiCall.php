@@ -4,6 +4,14 @@ declare(strict_types=1);
 
 namespace App\API;
 
+/**
+* Class AJAXApiCall
+*
+* @package App\API
+*
+* Called from: ApiUsersInit->runIt()
+**/
+
 class AJAXApiCall
 {
     public function runAjax()
@@ -13,6 +21,9 @@ class AJAXApiCall
         add_action('wp_ajax_dcms_ajax_readmore', [$this, 'sendContent']);
     }
 
+    /*
+    * Loads Ajax JS file and prints localize script
+    */
     public function loadScripts()
     {
         wp_register_script('rest-ajax', dirname(plugin_dir_url(__DIR__))
@@ -23,6 +34,9 @@ class AJAXApiCall
             'nonce' => wp_create_nonce('ajax-nonce'), ]);
     }
 
+    /*
+    * Trigger API call class and echoes the response
+    */
     public function sendContent()
     {
         if (!empty($_POST['nonce'])) {

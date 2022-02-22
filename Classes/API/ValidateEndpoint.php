@@ -4,11 +4,21 @@ declare(strict_types=1);
 
 namespace App\API;
 
+/**
+* Class ValidateEndpoint
+*
+* @package App\API
+*
+* called from: Prevent404->replace404Page()  &&   ApiUsersInit->runIt()
+**/
+
 class ValidateEndpoint
 {
     public static function validateTheEndpoint(): bool
     {
-
+        /*
+        * Get current URL of browser and validates against default or cutom endpoint
+        */
         if (empty(get_option('apiusers_settings'))) {
             $options = [];
             $options['apiusers_text_field_0'] = 'apiusers';

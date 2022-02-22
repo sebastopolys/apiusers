@@ -4,8 +4,21 @@ declare(strict_types=1);
 
 namespace App\API;
 
+/**
+* Class ApiCall
+*
+* @package App\API
+*
+* Called from: AJAXApiCall->sendContent()
+**/
+
 class ApiCall
 {
+    /*
+    * API request to the provided URL: $apiEndpoint
+    *
+    * Returns Api response: $resp
+    */
     public function callApi(?int $id): string
     {
         $apiEndpoint = 'https://jsonplaceholder.typicode.com/users/' . $id;

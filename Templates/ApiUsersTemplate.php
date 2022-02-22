@@ -2,9 +2,9 @@
 
 /**
  * Custom Plugin Template
- * File: my-custom-page.php
  *
- */
+ * Template File: ApiUsersTemplate.php
+ **/
 
 declare(strict_types=1);
 

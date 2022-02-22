@@ -4,6 +4,14 @@ declare(strict_types=1);
 
 namespace App\API;
 
+/**
+* Class Prevent404
+*
+* @package App\API
+*
+* called from: IncludeTemplate->start()
+**/
+
 class Prevent404
 {
     public function replace404Page()
@@ -13,7 +21,7 @@ class Prevent404
 
     public function my404Override(string $template): string
     {
-        global $wp_query;       
+        global $wp_query;
         if (ValidateEndpoint::validateTheEndpoint() === true) {
             status_header(200);
             $wp_query->is_404 = false;
