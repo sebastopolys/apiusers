@@ -20,8 +20,7 @@ class ValidateEndpoint
         * Get current URL of browser and validates against default or cutom endpoint
         */
         if (empty(get_option('apiusers_settings'))) {
-            $options = [];
-            $options['apiusers_text_field_0'] = 'apiusers';
+           $options['apiusers_text_field_0'] = 'apiusers';
         }
         if (!empty(get_option('apiusers_settings'))) {
             $options = get_option('apiusers_settings');
