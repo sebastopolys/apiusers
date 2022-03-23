@@ -5,11 +5,11 @@
         link = $(this);
         id = link.attr('data');
         $.ajax({
-            url : dcms_vars.ajaxurl,
+            url : api_var.ajaxurl,
             type: 'post',
             data: {
-                action : 'dcms_ajax_readmore',
-                nonce: dcms_vars.nonce,
+                action : 'apiuser_popup',
+                nonce: api_var.nonce,
                 id_post:id
             },
             beforeSend: function(){

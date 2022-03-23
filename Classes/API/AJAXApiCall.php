@@ -17,8 +17,8 @@ class AJAXApiCall
     public function runAjax()
     {
         add_action('wp_enqueue_scripts', [$this, 'loadScripts']);
-        add_action('wp_ajax_nopriv_dcms_ajax_readmore', [$this, 'sendContent']);
-        add_action('wp_ajax_dcms_ajax_readmore', [$this, 'sendContent']);
+        add_action('wp_ajax_nopriv_apiuser_popup', [$this, 'sendContent']);
+        add_action('wp_ajax_apiuser_popup', [$this, 'sendContent']);
     }
 
     /*
@@ -29,7 +29,7 @@ class AJAXApiCall
         wp_register_script('rest-ajax', dirname(plugin_dir_url(__DIR__))
         . '/scripts/script.js', ['jquery'], '1', true);
         wp_enqueue_script('rest-ajax');
-        wp_localize_script('rest-ajax', 'dcms_vars', [
+        wp_localize_script('rest-ajax', 'api_var', [
             'ajaxurl' => admin_url('admin-ajax.php'),
             'nonce' => wp_create_nonce('ajax-nonce'), ]);
     }
