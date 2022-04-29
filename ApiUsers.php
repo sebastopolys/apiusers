@@ -2,7 +2,7 @@
 
 /**
  * @link              https://sebastopolys.com/
- * @since             0.0.1
+ * @since             0.0.2
  * @package           Api Users
  * Plugin Name:       Api Users
  * Plugin URI:        https://sebastopolys.com/
