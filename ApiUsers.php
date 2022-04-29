@@ -3,7 +3,7 @@
 /**
  * @link              https://sebastopolys.com/
  * @since             0.0.1
- * @package          Api Users
+ * @package           Api Users
  * Plugin Name:       Api Users
  * Plugin URI:        https://sebastopolys.com/
  * Description:       Get users from provided API and show them on frontend
