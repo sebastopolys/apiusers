@@ -7,7 +7,7 @@
  * Plugin Name:       Api Users
  * Plugin URI:        https://sebastopolys.com/
  * Description:       Get users from provided API and show them on frontend
- * Version:           0.0.1
+ * Version:           0.0.2
  * Author:            Sebas Rossi
  * Text Domain:       apiusers
  */
