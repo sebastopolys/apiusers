@@ -14,6 +14,7 @@ namespace App\Backend;
 
 class BackendDashboard
 {
+    public $option = null;
     /*
     * Initialize with hooks
     */
@@ -49,6 +50,17 @@ class BackendDashboard
     }
 
     /*
+    *  Get backend options
+    */
+    public function backOps(){
+        if($this->option == null):
+            $obj = new BackendOptions();
+            $this->option = $obj->option;
+        endif;
+        return $this->option;
+    }
+
+    /*
     * Prints the Welcome page
     */
     public function apiusersMainCallback()
@@ -61,7 +73,8 @@ class BackendDashboard
     */
     public function apiusersSettingsInit()
     {
-        $options = get_option('apiusers_settings');
+      
+        $options = $this->backOps();
         if (empty($options)) {
             $options['apiusers_text_field_0'] = 'apiusers';
             $options['apiusers_radio_field_1'] = 'theme';
@@ -128,11 +141,10 @@ class BackendDashboard
     * Custom endpoint field
     */
     public function apiusersTextFieldRender()
-    {
-        $options = get_option('apiusers_settings');
+    {   
         ?>
         <input type='text' name='apiusers_settings[apiusers_text_field_0]' 
-        value='<?php echo esc_attr($options['apiusers_text_field_0']); ?>'>
+        value='<?php echo esc_attr($this->backOps()['apiusers_text_field_0']); ?>'>
         <?php
     }
 
@@ -140,19 +152,18 @@ class BackendDashboard
     * View field
     */
     public function apiUsersRadioRender()
-    {
-        $options = get_option('apiusers_settings');
+    {         
         ?>
         <input id='radiotheme' type='radio' name='apiusers_settings[apiusers_radio_field_1]'
         <?php
-        if ( $options['apiusers_radio_field_1'] === 'theme') {
+        if ( $this->backOps()['apiusers_radio_field_1'] === 'theme') {
             ?> checked<?php
         }
         ?>
         value='theme'>
         <label for="radiotheme">Theme</label>
         <input id='radioraw' type='radio' name='apiusers_settings[apiusers_radio_field_1]'
-        <?php if ( $options['apiusers_radio_field_1'] === 'raw') {
+        <?php if ( $this->backOps()['apiusers_radio_field_1'] === 'raw') {
             ?> checked<?php
         }
         ?>
@@ -166,15 +177,12 @@ class BackendDashboard
     */
     public function apiusersCheckboxRender()
     {
-        if (!empty(get_option('apiusers_settings'))) {
-            $options = get_option('apiusers_settings');
-        }
-        if (empty(get_option('apiusers_settings'))) {
-            $options['apiusers_checkbox_field_2'] = '';
+        if (empty($this->backOps())) {
+            $this->backOps()['apiusers_checkbox_field_2'] = '';
         }
         ?>
         <input type='checkbox' name='apiusers_settings[apiusers_checkbox_field_2]' <?php
-        if (isset($options['apiusers_checkbox_field_2'])) {
+        if (isset($this->backOps()['apiusers_checkbox_field_2'])) {
             ?>checked  <?php
         } ?>value = "1" 
         >
