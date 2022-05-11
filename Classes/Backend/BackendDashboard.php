@@ -72,16 +72,7 @@ class BackendDashboard
     * Add WP API settings on Settings page
     */
     public function apiusersSettingsInit()
-    {
-      
-        $options = $this->backOps();
-        if (empty($options)) {
-            $options['apiusers_text_field_0'] = 'apiusers';
-            $options['apiusers_radio_field_1'] = 'theme';
-            $options['apiusers_checkbox_field_2'] = '1';
-            update_option('apiusers_settings', $options);
-        }
-
+    {     
         register_setting('pluginPage', 'apiusers_settings', [$this, 'callbackValidation']);
 
         add_settings_section(
