@@ -14,7 +14,7 @@ namespace App\Backend;
 
 class BackendRender{
 
-    public $option = null;
+    private $option = null;
 
     /*
     *  Get backend options
