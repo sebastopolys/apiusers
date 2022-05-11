@@ -20,34 +20,11 @@ class BackendDashboard
     */
     public function backHooks()
     {
-
-        add_action('admin_menu', [$this, 'apiusersAdminMenu']);
+        $menu = new BackendMenu();
+        $menu->runMenuHook();
+        
         add_action('admin_init', [$this, 'apiusersSettingsInit']);
-    }
-
-    /*
-    * Adds WP dashboard menu & submenu tab
-    */
-    public function apiusersAdminMenu()
-    {
-
-        add_menu_page(
-            __('Api Users', 'apiusers'),
-            __('Api Users', 'apiusers'),
-            'manage_options',
-            'apiusers',
-            [$this, 'apiusersMainCallback']
-        );
-
-        add_submenu_page(
-            'apiusers',
-            'Api Users settings',
-            'Settings',
-            'manage_options',
-            'settings',
-            [$this, 'apiusersOptionsPage']
-        );
-    }
+    }   
 
     /*
     *  Get backend options
@@ -59,15 +36,7 @@ class BackendDashboard
         endif;
         return $this->option;
     }
-
-    /*
-    * Prints the Welcome page
-    */
-    public function apiusersMainCallback()
-    {
-        echo wp_kses_post(file_get_contents(dirname(plugin_dir_path(__DIR__)) . '/Templates/welcomepage.html'));
-    }
-
+   
     /*
     * Add WP API settings on Settings page
     */
@@ -105,20 +74,7 @@ class BackendDashboard
             'apiusers_pluginPage_section'
         );
     }
-
-    /*
-    * Prints the WP API settings form
-    */
-    public function apiusersOptionsPage()
-    {
-        ?>
-        <form action="options.php" method="post">
-        <?php settings_fields('pluginPage');
-            do_settings_sections('pluginPage');
-            submit_button();
-        ?></form><?php
-    }
-
+   
     /*
     * Adds sub title to settings Section
     */
