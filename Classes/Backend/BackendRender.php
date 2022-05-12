@@ -101,7 +101,7 @@ class BackendRender{
             preg_replace('/[^_A-Za-z0-9]/ ', '', $output['apiusers_text_field_0']);
             if ($output['apiusers_text_field_0'] === '') {
                 $output['apiusers_text_field_0'] =
-                get_option('apiusers_settings')['apiusers_text_field_0'];
+                $this->backOps()['apiusers_text_field_0'];
             }
             $output['apiusers_radio_field_1'] = $input['apiusers_radio_field_1'];
             $output['apiusers_checkbox_field_2'] = $input['apiusers_checkbox_field_2'];
