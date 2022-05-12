@@ -20,10 +20,10 @@ class BackendRender{
     *  Get backend options
     */
     private function backOps(){
-        if($this->option == null):
+        if($this->option == null){
             $obj = new BackendOptions();
             $this->option = $obj->option;
-        endif;
+        }
         return $this->option;
     }
 

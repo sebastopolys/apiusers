@@ -1,19 +1,18 @@
 <div class="">        
             <h1 class="title">Connect to API WP plugin</h1>
             <h2 class="subtitle">A basic WP plugin as a starting point, framework or boilerplate for conecting with an external API and retrieving the data in a html table and AJAX</h2>
+            
             <h4 class="">ENDPOINT</h4>
             <p class="">The default Endpoint is named like the
             plugin name: <code>apiusers</code></p>
             <p class="">There is no link supplied on the frontend,
             just access by typing the endpoint after website URL. </p>
             <p class="">Or place a link anywere on the frontend
-            <code>https://yourwebsite.com/apiusers</code></p>            
+            <code>https://yourwebsite.com/apiusers</code></p>
+
             <h4 class="">COMPOSER</h4>
             <p class="">Composer is integrated to the proyect and a 
-            composer.json file is available</p>
-            <p class="">I already had some experience using composer with Laravel, 
-            but never did it with WordPress before, so this was my first time 
-            using composer with WP</p>
+            composer.json file is available</p>           
             <p class="">Pugin can be installed on a WP website following these steps:</p>
             <ol class="">
             <li class="">Open console and cd to the plugins
@@ -24,6 +23,7 @@
             <li class="">Run <code>composer install</code></li>
             <li class="">Run <code>composer update</code> if necesary</li>
             </ol>
+            
             <h4 class="">UNIT TESTING</h4>            
             <p><i>Phpunit installing testing environment:</i></p>
             <ol>     
@@ -35,6 +35,15 @@
             <ul>
                 <li>cd to apiusers plugin path and use:<code>vendor/bin/phpunit tests/ApiusersTest.php</code> to run test file</li>
             </ul>      
+            
+            <h4>PHP CODE SNIFFER / Inpsyde code style</h4>
+            <p><i>Usage:</i></p>
+            <ul>
+                <li>
+                    <p>Use <code>vendor/bin/phpcs --standard="Inpsyde" &lt;path-file&gt;</code> to run on single files</p>
+                </li>
+            </ul>
+       
             <h4 class="">BACKEND OPTIONS</h4>
             <p class="">Some backend options are provided 
             on the WP admin dashboard / Api Users / Settings</p>
@@ -45,17 +54,10 @@
             theme or hiding header & footer. This is done with a simple CSS script</li>
             <li class=""><b>Credits:</b> Nothing special, just the 
             option to hide / display a brief footer message</li>
-            <h4>PHP CODE SNIFFER / Inpsyde code style</h4>
-            <p><i>Usage:</i></p>
-            <ul>
-                <li>
-                    <p>Use <code>vendor/bin/phpcs --standard="Inpsyde" &lt;path-file&gt;</code> to run on single files</p>
-                </li>
-            </ul>
-            <p>All files are free of errors and warnings, except for one:</p>
-            <p>It looks like some bug is present on the <code>Classes/Backend/BackendDashboard.php</code> file. Unexistent errors on lines 148 and 155</p>
-            </ul>
+            
+           
             <hr>
+            
             <h4 class="">INFORMATION:</h4>
             <ul class="">
             <li class="">Plugin Author: Sebastian Rossi</li>
@@ -63,8 +65,7 @@
             <li class="">Plugin textdomain: apiusers</li>
             <li class="">Github repository: 
             <a target="__blank" href="https://github.com/sebastopolys/apiusers">
-            https://github.com/sebastopolys/apiusers</a></li>
-            <li class="">Worked hours to complete: 51</li>
+            https://github.com/sebastopolys/apiusers</a></li>         
             <li class="">Contact: sebastopolys@gmail.com</li>
             </ul>
 </div>

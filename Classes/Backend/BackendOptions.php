@@ -9,7 +9,7 @@ namespace App\Backend;
 *
 * @package App\Backend
 *
-* called from: BackendRender.php
+* called from: BackendRender.php | ValidateEndpoint.php
 **/
 
 class BackendOptions
