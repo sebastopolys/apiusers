@@ -5,11 +5,11 @@ declare(strict_types=1);
 namespace App\Backend;
 
 /**
-* Class BackendMenu
+* Class BackendRender
 *
 * @package App\Backend
 *
-* called from: BackendDashboard.php
+* extended from: BackendDashboard.php
 **/
 
 class BackendRender{
