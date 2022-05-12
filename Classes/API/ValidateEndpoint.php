@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\API;
 
+use App\Backend\BackendOptions;
+
 /**
 * Class ValidateEndpoint
 *
@@ -19,12 +21,8 @@ class ValidateEndpoint
         /*
         * Get current URL of browser and validates against default or cutom endpoint
         */
-        if (empty(get_option('apiusers_settings'))) {
-           $options['apiusers_text_field_0'] = 'apiusers';
-        }
-        if (!empty(get_option('apiusers_settings'))) {
-            $options = get_option('apiusers_settings');
-        }
+        $obj = new BackendOptions();       
+       
         if (
             isset($_SERVER['HTTPS']) === 'on' || isset($_SERVER['HTTPS']) === 1
             || isset($_SERVER['HTTP_X_FORWARDED_PROTO']) === 'https'
@@ -39,7 +37,7 @@ class ValidateEndpoint
             $httpUri = sanitize_text_field(wp_unslash($_SERVER['REQUEST_URI']));
             if (
                 $protocol . $httpHost . $httpUri === get_site_url()
-                . '/' . $options['apiusers_text_field_0']
+                . '/' . $obj->option['apiusers_text_field_0']
             ) {
                     return true;
             }
