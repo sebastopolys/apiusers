@@ -1,6 +1,7 @@
 # apiusers
 
-## Connect to API WP plugin - A basic WP plugin as a starting point, framework or boilerplate for conecting with an external API and retrieving the data in a html table and AJAX
+## Connect to API WP plugin 
+- A basic WP plugin as a starting point, framework or boilerplate for conecting with an external API and retrieving the data in a html table and AJAX -
 
 ### Requirements & overall description of plugin
 
