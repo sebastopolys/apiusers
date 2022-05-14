@@ -24,6 +24,7 @@ class BackendOptions
                 $this->option['apiusers_text_field_0'] = 'apiusers';
                 $this->option['apiusers_radio_field_1'] = 'theme';
                 $this->option['apiusers_checkbox_field_2'] = '1';
+                $this->option['apiusers_text_field_1'] = 'This is the default footer';
                 update_option('apiusers_settings', $this->option);
             }
         }

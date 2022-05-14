@@ -56,8 +56,15 @@ class BackendDashboard extends BackendRender
         );
         add_settings_field(
             'apiusers_checkbox_field_2',
-            esc_attr__('Credits', 'apiusers'),
+            esc_attr__('Footer', 'apiusers'),
             [$this, 'apiusersCheckboxRender'],
+            'pluginPage',
+            'apiusers_pluginPage_section'
+        );
+        add_settings_field(
+            'apiusers_text_field_2',
+            esc_attr__('Footer text', 'apiusers'),
+            [$this, 'apiusersFooterRender'],
             'pluginPage',
             'apiusers_pluginPage_section'
         );

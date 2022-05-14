@@ -43,10 +43,8 @@ for ($i = 0; $i < count($apiResp); $i++) {
 echo "</table>";
 
 if (isset($obj->option['apiusers_checkbox_field_2'])) {
-        echo
-        '<p class="apiusers-credit">
-        Api Users plugin was created by Sebastian Rossi for Inpsyde job application
-        </p>';
+        echo '<p class="apiusers-credit">' . 
+        $obj->option['apiusers_text_field_1'] . '</p>';
 }
 
 ?>

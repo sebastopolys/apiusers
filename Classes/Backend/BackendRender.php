@@ -88,6 +88,14 @@ class BackendRender{
         <?php
     }
 
+    public function apiusersFooterRender(){
+        ?>
+        <input type='text' name='apiusers_settings[apiusers_text_field_1]' 
+        placeholder="<?php echo esc_attr($this->backOps()['apiusers_text_field_1']); ?>"
+        value="<?php echo esc_attr($this->backOps()['apiusers_text_field_1']); ?>"/>
+        <?php
+    }
+
      /*
     * Custom Endpoint string REGEX validation
     */
@@ -102,10 +110,17 @@ class BackendRender{
             if ($output['apiusers_text_field_0'] === '') {
                 $output['apiusers_text_field_0'] =
                 $this->backOps()['apiusers_text_field_0'];
-            }
-            $output['apiusers_radio_field_1'] = $input['apiusers_radio_field_1'];
-            $output['apiusers_checkbox_field_2'] = $input['apiusers_checkbox_field_2'];
-            return apply_filters('callbackvalidation', $output, $input);
+            }            
         }
+        if (isset($input['apiusers_text_field_1'])&&strlen($input['apiusers_text_field_1'])>3) {
+            $output['apiusers_text_field_1'] = $input['apiusers_text_field_1'];
+        }
+        else{
+            $output['apiusers_text_field_1'] = $this->backOps()['apiusers_text_field_1'];
+        }
+        $output['apiusers_radio_field_1'] = $input['apiusers_radio_field_1'];
+        $output['apiusers_checkbox_field_2'] = $input['apiusers_checkbox_field_2'];
+       
+        return apply_filters('callbackvalidation', $output, $input);
     }
 }

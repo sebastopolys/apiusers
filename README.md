@@ -67,6 +67,5 @@ The WP settings API was used.
 - Plugin Author: Sebastian Rossi
 - Plugin name: Api Users
 - Plugin textdomain: apiusers
-- Worked hours to complete: 48
 - Contact: sebastopolys@gmail.com
 
